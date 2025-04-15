@@ -4,10 +4,8 @@
 
 void Board::SetBoard(char setup[3][3])
 {
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
 			grid[i][j] = setup[i][j];
 		}
 	}
@@ -66,6 +64,7 @@ char Board::GameStatus()
 
 	//Win conditions for straight lines
 	for (int i = 0; i < 3; i++) {
+		//Across
 		if (grid[i][0] == grid[i][1] && grid[i][0] == grid[i][2]) {
 			if (grid[i][0] == 'O') {
 				return 'O';
@@ -74,6 +73,7 @@ char Board::GameStatus()
 				return 'X';
 			}
 		}
+		//Down
 		if (grid[0][i] == grid[1][i] && grid[0][i] == grid[2][i]) {
 			if (grid[0][i] == 'O')
 				return 'O';
