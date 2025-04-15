@@ -29,11 +29,12 @@ int main() {
         else {
             std::cout << "Invalid move! Please try again.\n";
         }
+        system("cls");
     }
 
     // Display the final board
     std::cout << "Game Over!" << std::endl;
-    if (board.GameStatus()) {
+    if (board.GameStatus() == 'T') {
         std::cout << "Game is a draw." << std::endl;
     }
     else {
