@@ -44,6 +44,8 @@ char Board::GameStatus()
 	if (tie == 9)
 		return 'T';
 
+	//Win Conditions for diagonals
+	//Forward diagonal
 	if (grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2]) {
 		if (grid[0][0] == 'O') {
 			return 'O';
@@ -52,6 +54,7 @@ char Board::GameStatus()
 			return 'X';
 		}
 	}
+	//Backwards diagonal
 	if (grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0]) {
 		if (grid[0][2] == 'O') {
 			return 'O';
@@ -60,6 +63,8 @@ char Board::GameStatus()
 			return 'X';
 		}
 	}
+
+	//Win conditions for straight lines
 	for (int i = 0; i < 3; i++) {
 		if (grid[i][0] == grid[i][1] && grid[i][0] == grid[i][2]) {
 			if (grid[i][0] == 'O') {
