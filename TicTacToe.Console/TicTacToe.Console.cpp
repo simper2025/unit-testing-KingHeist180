@@ -13,7 +13,7 @@ int main() {
     int currentPlayer = 1;
     int row, col;
 
-    while (board.GameStatus()) {
+    while (board.GameStatus() == ' ') {
         // Display the board
         char token = (currentPlayer == 1) ? 'X' : 'O';
         std::cout << "Player " << token << "'s turn:\n";
