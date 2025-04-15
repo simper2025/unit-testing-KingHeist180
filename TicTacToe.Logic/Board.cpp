@@ -29,10 +29,6 @@ bool Board::SetSquare(int row, int col, char player)
 
 char Board::GameStatus()
 {
-	//Tie condition
-	if (grid[0][0] != ' ' && grid[0][1] != ' ' && grid[0][2] != ' ' && grid[1][0] != ' ' && grid[1][1] != ' ' && grid[1][2] != ' ' && grid[2][0] != ' ' && grid[2][1] != ' ' && grid[2][2] != ' ')
-		return 'T';
-
 	//Win Conditions for diagonals
 	//Forward diagonal
 	if (grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2]) {
@@ -73,6 +69,18 @@ char Board::GameStatus()
 				return 'X';
 		}
 	}
+
+	//Tie conditions
+	int tie = 0;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (grid[i][j] != ' ') {
+				tie++;
+			}
+		}
+	}
+	if (tie == 9)
+		return 'T';
 
 	return ' ';
 }
