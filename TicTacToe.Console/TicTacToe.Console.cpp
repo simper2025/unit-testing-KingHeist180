@@ -64,7 +64,7 @@ void DisplayBoard(Board board) {
 
 // Function to get player's move
 void GetPlayerMove(int& row, int& col) {
-    std::cout << "Enter row and column(1 - 3) : ";
+    std::cout << "Enter row and column(ex:1 2) : ";
     std::cin >> row >> col;
     --row; // Adjusting for zero-based indexing
     --col;
